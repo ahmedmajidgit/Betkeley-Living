@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.card-shadow {
+  box-shadow: 0px 0px 16px -3px rgba(23, 1, 1, 0.71);
+  -webkit-box-shadow: 0px 0px 16px -3px rgba(23, 1, 1, 0.71);
+  -moz-box-shadow: 0px 0px 16px -3px rgba(23, 1, 1, 0.71);
+}
+
+
+.dark .card-shadow {
+  box-shadow: 0px 0px 16px -3px rgba(250, 248, 248, 0.71);
+  -webkit-box-shadow: 0px 0px 16px -3px rgba(245, 241, 241, 0.71);
+  -moz-box-shadow: 0px 0px 16px -3px rgba(252, 249, 249, 0.71);
+}
+
+.accordion-shadow {
+  box-shadow: 1px 24px 35px -14px rgba(0, 0, 0, 0.06);
+  -webkit-box-shadow: 1px 24px 35px -14px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 1px 24px 35px -14px rgba(0, 0, 0, 0.06);
+}
+
+
+.dark .accordion-shadow {
+  box-shadow: 1px 24px 35px -14px rgba(255, 255, 255, 0.151);
+  -webkit-box-shadow: 1px 24px 35px -14px rgba(255, 255, 255, 0.13);
+  -moz-box-shadow: 1px 24px 35px -14px rgba(252, 251, 251, 0.144);
+}
+@font-face {
+  font-family: "FontName";
+  font-style: normal;
+  font-weight: bold; /* normal | 300 | 400 | 600 | bold | etc */
+  src: url("../assets/fonts/OTF/AktivGrotesk-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "fontTitle";
+  font-style: normal;
+  font-weight: bold; /* normal | 300 | 400 | 600 | bold | etc */
+  src: url("../assets/fonts/Sigurd-Regular.otf") format("truetype");
+}
+
+h1,
+button,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: FontName;
+}
+
+.text-title {
+  font-family: fontTitle !important;
+}
+
+.carousel-container {
+}
+.carousel-container > div {
+  width: 100% !important;
+}
+
+.image-shadow {
+  box-shadow: 12px -200px 52px -52px rgba(0,0,0,0.31) inset;
+  -webkit-box-shadow: 12px -200px 52px -52px rgba(0,0,0,0.31) inset;
+  -moz-box-shadow: 12px -200px 52px -52px rgba(0,0,0,0.31) inset;
+}
+
+.dark{
+  background-color: #18181B;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.card-description {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.card-info {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.card-price {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-buttons button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-buttons button:hover {
+  background-color: #0056b3;
+}

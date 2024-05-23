@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="200" height="100">
+  <!-- Rectangular background -->
+  <rect x="0" y="0" width="200" height="100" fill="#D3A188" />
+
+  <!-- Text -->
+  <text x="100" y="50" text-anchor="middle" font-size="28" fill="#ffffff" font-family="Arial" font-weight="bold">
+    Berkeley<tspan x="100" dy="24">Living</tspan>
+  </text>
+</svg>
