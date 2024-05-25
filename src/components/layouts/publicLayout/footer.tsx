@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import logo from "@/assets/images/header/logo-white.png";
 import { FaWhatsapp } from "react-icons/fa";
-
+import logoDark from "@/assets/images/header/logo3.svg"
 function Footer() {
   return (
     <>
@@ -10,11 +10,11 @@ function Footer() {
     <br />
       <div className=" p-2 lg:p-4 md:p-10 flex flex-col justify-center items-center" style={{backgroundColor: "#18181B"}}>
         <div className="lg:block hidden pt-6 py-4">
-          <Image src={logo} alt="" width={250} height={110} />
+          <Image src={logoDark} alt="" width={250} height={110} />
         </div>
-        <div className="lg:hidden block mt-5">
+        {/* <div className="lg:hidden block mt-5">
           <Image src={logo} alt="" width={170} height={20} />
-        </div>
+        </div> */}
 
         <hr className="border-b-[2px] border-[#ffffff] text-[#ffffff] font-bold mx-18 w-[90%] my-8" />
 
