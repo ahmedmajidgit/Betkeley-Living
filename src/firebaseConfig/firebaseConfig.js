@@ -6,25 +6,16 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyABu2QaOWUy8oZx2Z8pGq0R-V7CrsxCWrI",
-  authDomain: "betkeley-living.firebaseapp.com",
-  projectId: "betkeley-living",
-  storageBucket: "betkeley-living.appspot.com",
-  messagingSenderId: "166268519057",
-  appId: "1:166268519057:web:4f08ceee51d69dca52f530",
-  measurementId: "G-GQ5LM9PLH1"
-};
 
-// const firebaseConfig = {
-//     apiKey: "YOUR_API_KEY",
-//     authDomain: "YOUR_AUTH_DOMAIN",
-//     projectId: "YOUR_PROJECT_ID",
-//     storageBucket: "YOUR_STORAGE_BUCKET",
-//     messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-//     appId: "YOUR_APP_ID",
-//     measurementId: "YOUR_MEASUREMENT_ID"
-//   };
+const firebaseConfig = {
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
