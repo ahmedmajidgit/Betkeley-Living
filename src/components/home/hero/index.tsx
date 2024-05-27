@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import heroimg from "@/assets/images/hero-section/hero-img.png";
+// import heroimg from "@/assets/images/hero-section/hero-img.png";
+// import heroimg2 from "@/assets/images/hero-section/ATR-Royal-Mansion-Majlis.webp";
+// import heroimg3 from "@/assets/images/hero-section/ATR-Panoramic-Penthouse-Terrace-Lounge.webp";
+// import heroimg4 from "@/assets/images/hero-section/Dubai+Hotels+with+Best+Views+-+Mandarin+Oriental+Jumeira,+Dubai.jpg";
+import heroimg5 from "@/assets/images/hero-section/Dubai+Hotels+with+Best+Views+-+Address+Dubai+Marina.jpg";
 import Conatiner from "@/components/container";
 import { Input } from "../../ui/input";
 import { Button } from "@/components/ui/button";
@@ -24,7 +28,7 @@ function HeroSection() {
       <div className="grid grid-cols-12 lg:mb-[170px]  ">
         <div className=" col-span-12 md:col-span-12 z-100  ">
           <div className=" col-span-12  w-full h-[80vh] md:h-[90vh] lg:h-[120vh]">
-            <Image src={heroimg} className="h-full  w-full" alt="Hero Image" />
+            <Image src={heroimg5} className="h-full  w-full" alt="Hero Image" />
             <p className=" text-[70px] md:text-[90px] lg:text-[150px] text-title text-white absolute leading-[1.0] font-normal left-[30%] top-[70%] -translate-x-[15%] -translate-y-[100%] md:top-1/3  md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 ">
               Berkely Living 
               {/* <br className=" block  " /> a state{" "}
