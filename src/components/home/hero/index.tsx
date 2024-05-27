@@ -26,7 +26,7 @@ function HeroSection() {
           <div className=" col-span-12  w-full h-[80vh] md:h-[90vh] lg:h-[120vh]">
             <Image src={heroimg} className="h-full  w-full" alt="Hero Image" />
             <p className=" text-[70px] md:text-[90px] lg:text-[150px] text-title text-white absolute leading-[1.0] font-normal left-[30%] top-[70%] -translate-x-[15%] -translate-y-[100%] md:top-1/3  md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 ">
-              Betkeley Living 
+              Berkely Living 
               {/* <br className=" block  " /> a state{" "}
               <br className="  block" />
               of mind */}

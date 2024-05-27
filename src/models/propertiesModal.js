@@ -33,7 +33,7 @@ const propertiesSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    required: [true, "Please provide amount"],
+    required: [true, "Please provide status"],
     default: "New",
   },
   disable: {
@@ -43,6 +43,10 @@ const propertiesSchema = new mongoose.Schema({
   images: [{
     type: String,
   }],
+  date: {
+    type: Date,
+    default: new Date(),
+  },
 });
 
 const Properties = mongoose.models.properties || mongoose.model("properties", propertiesSchema);

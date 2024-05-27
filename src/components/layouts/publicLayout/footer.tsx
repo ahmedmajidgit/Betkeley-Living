@@ -77,7 +77,11 @@ function Footer() {
               Contact Us
               </p>
               <p className="text-[14px]  md:text-[18px] text-[#ffffff] font-normal cursor-pointer">
-              Contact Us Right Now Via {" "}<FaWhatsapp className="text-white inline-block" style={{height: "22px"}} /> WhatsApp
+              Contact Us Right Now Via {" "}
+              {/* <FaWhatsapp className="text-white inline-block" style={{height: "22px"}} /> WhatsApp */}
+              <a href="https://wa.me/+971582317770" target="_blank" rel="noopener noreferrer" className="text-white">
+                <FaWhatsapp className="inline-block" style={{ height: "22px" }} /> WhatsApp
+              </a>
               </p>
             </div>
           </div>

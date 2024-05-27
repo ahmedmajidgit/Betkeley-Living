@@ -15,12 +15,13 @@ import { FaHeart } from "react-icons/fa";
 
 interface MyComponentProps {
   isVideo?: boolean;
-  url?: string;
+  url: string;
   cartImage?: any;
   numPhotos?: number;
   size?: string;
   items?: any;
   type?: string;
+  status?: string;
   videoPresent?: boolean;
   // currentSlide?: number;
   // itemIndex?: number;
@@ -70,7 +71,7 @@ function CardSlider(props: MyComponentProps) {
           </video>
         ) : (
           <Image
-            src={`${process.env.NEXT_PUBLIC_API_URL}/${props.url}`}
+            src={props.url}
             objectFit="cover"
             alt="card-product"
             layout="fill"
@@ -104,9 +105,9 @@ function CardSlider(props: MyComponentProps) {
               </div>
               <span className="text-white text-[14px]">{props.numPhotos}</span>
             </div>
-            <div>
+            {/* <div>
               <FaHeart size={18} className="text-white" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

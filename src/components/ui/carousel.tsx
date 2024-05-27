@@ -123,7 +123,44 @@ const Carousel = React.forwardRef<
         api?.off("select", onSelect);
       };
     }, [api, onSelect]);
+    // React.useEffect(() => {
+    //   const interval = setInterval(() => {
+    //     if (canScrollNext) {
+    //       scrollNext();
+    //     } else {
+    //       // If at the end, scroll to the first slide
+    //       const slideCount = api?.slidesInView()?.length || 0;
+    //       if (slideCount > 0) {
+    //         const firstSlideIndex = 0;
+    //         const lastSlideIndex = slideCount - 1;
+    //         api?.scrollTo(lastSlideIndex - firstSlideIndex, true);
+    //       }
+    //     }
+    //   }, 5000);
+    
+    //   return () => clearInterval(interval);
+    // }, [scrollNext, canScrollNext, api]);
 
+    // React.useEffect(() => {
+    //   const interval = setInterval(() => {
+    //     if (canScrollNext) {
+    //       scrollNext();
+    //     } else {
+    //       const slideCount = api?.slidesInView()?.length || 0;
+    //       if (slideCount > 0) {
+    //         const lastSlideIndex = slideCount - 1;
+    //         const isLastSlideInView = api?.slidesInView()?.includes(lastSlideIndex);
+    //         if (isLastSlideInView) {
+    //           // If last slide is in view, move it to the beginning
+    //           api?.scrollTo(0, false);
+    //         }
+    //       }
+    //     }
+    //   }, 5000);
+    
+    //   return () => clearInterval(interval);
+    // }, [scrollNext, canScrollNext, api]);
+    
     return (
       <CarouselContext.Provider
         value={{
@@ -251,6 +288,82 @@ const CarouselNext = React.forwardRef<HTMLButtonElement, React.ComponentProps<ty
 );
 CarouselNext.displayName = "CarouselNext";
 
+const CarouselPrevious2 = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(
+  ({ className, variant = "outline", size = "icon", ...props }, ref) => {
+    const { scrollPrev, canScrollPrev, hasMultipleSlides } = useCarousel();
+
+    if (!hasMultipleSlides) return <></>;
+
+    return (
+      // <button
+      //   ref={ref}
+      //   className={cn(
+      //     "absolute h-8 w-8 bg-transparent border-none bottom-[-20px] left-[2rem] -translate-x-1/2",
+      //     className
+      //   )}
+      //   disabled={!canScrollPrev}
+      //   onClick={scrollPrev}
+      //   {...props}
+      // >
+      //   <FaChevronLeft size={24} className="text-white" />
+      //   <span className="text-white">Prev</span>
+      // </button>
+      <button
+        ref={ref}
+        className={cn(
+          "absolute h-8 w-24 bg-transparent border-none bottom-[-20px] left-0 flex items-center space-x-2 justify-start",
+          className
+        )}
+        disabled={!canScrollPrev}
+        onClick={scrollPrev}
+        {...props}
+      >
+        <FaChevronLeft size={24} className="text-white" />
+        <span className="text-white">Prev</span>
+      </button>
+    );
+  }
+);
+CarouselPrevious2.displayName = "CarouselPrevious2";
+
+const CarouselNext2 = React.forwardRef<HTMLButtonElement, React.ComponentProps<typeof Button>>(
+  ({ className, variant = "outline", size = "icon", ...props }, ref) => {
+    const { scrollNext, canScrollNext, hasMultipleSlides } = useCarousel();
+
+    if (!hasMultipleSlides) return <></>;
+
+    return (
+      // <button
+      //   ref={ref}
+      //   className={cn(
+      //     "absolute h-8 w-8 bg-transparent border-none bottom-[-20px] right-[-1rem] -translate-x-1/2",
+      //     className
+      //   )}
+      //   disabled={!canScrollNext}
+      //   onClick={scrollNext}
+      //   {...props}
+      // >
+      //   <span className="text-white">Next</span>
+      //   <FaChevronRight size={24} className="text-white" />
+      // </button>
+      <button
+        ref={ref}
+        className={cn(
+          "absolute h-8 w-24 bg-transparent border-none bottom-[-20px] right-0 flex items-center space-x-2 justify-end",
+          className
+        )}
+        disabled={!canScrollNext}
+        onClick={scrollNext}
+        {...props}
+      >
+        <span className="text-white">Next</span>
+        <FaChevronRight size={24} className="text-white" />
+      </button>
+    );
+  }
+);
+CarouselNext2.displayName = "CarouselNext2";
+
 export {
   type CarouselApi,
   Carousel,
@@ -258,4 +371,6 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselPrevious2,
+  CarouselNext2,
 };

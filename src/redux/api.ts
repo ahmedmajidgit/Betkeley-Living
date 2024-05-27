@@ -5,6 +5,10 @@ export const baseQueryWithoutAuth = fetchBaseQuery({
   baseUrl: `${process.env.NEXT_PUBLIC_API_URL}`,
 });
 
+export const baseQuery = fetchBaseQuery({
+  baseUrl:  "/api" ,
+});
+
 // Base query function with authorization headers
 // export const baseQueryWithAuth = fetchBaseQuery({
 //   baseUrl: `${process.env.NEXT_PUBLIC_API_BASE_URL}`,

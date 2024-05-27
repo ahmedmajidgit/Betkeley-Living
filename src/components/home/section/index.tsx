@@ -15,7 +15,9 @@ import {
   CarouselContent,
   CarouselItem,
   CarouselNext,
+  CarouselNext2,
   CarouselPrevious,
+  CarouselPrevious2,
 } from "@/components/ui/carousel";
 import { useMediaQuery } from "@uidotdev/usehooks";
 
@@ -90,6 +92,8 @@ function Section(props: sectionProps) {
                 </>
               ))}
             </CarouselContent>
+            <CarouselPrevious2 title="Prev" />
+            <CarouselNext2 title="Next" />
           </Carousel>
         </div>
       </div>

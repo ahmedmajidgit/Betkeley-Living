@@ -4,6 +4,6 @@
 
   <!-- Text -->
   <text x="100" y="50" text-anchor="middle" font-size="28" fill="#ffffff" font-family="Arial" font-weight="bold">
-    Berkeley<tspan x="100" dy="24">Living</tspan>
+    Berkely<tspan x="100" dy="24">Living</tspan>
   </text>
 </svg>

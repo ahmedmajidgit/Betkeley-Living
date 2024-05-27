@@ -5,7 +5,7 @@ import { PiBedBold } from "react-icons/pi";
 import { PiShower } from "react-icons/pi";
 import { BsBox } from "react-icons/bs";
 import { FiShare2 } from "react-icons/fi";
-import { MdChevronRight } from "react-icons/md";
+import { MdLocationPin } from "react-icons/md";
 import {
   Carousel,
   CarouselContent,
@@ -15,6 +15,7 @@ import {
 } from "../ui/carousel";
 import CardSlider from "./cardSlider";
 import { useRouter } from "next/navigation";
+import defaultimg from "@/assets/images/card/blog2.jpeg";
 
 interface MyComponentProps {
   data: any;
@@ -55,6 +56,13 @@ function CardProduct({
   bgClassName,
 }: MyComponentProps) {
   const {
+    name,
+    address,
+    amount,
+    bedrooms,
+    washrooms,
+    area,
+    status,
     title,
     price,
     description,
@@ -64,6 +72,7 @@ function CardProduct({
     totalMeter,
     cartImage,
     photos,
+    images,
     numPhotos,
     type,
     room_num,
@@ -108,7 +117,7 @@ function CardProduct({
         <div className={`${size == "lg" ? "lg:col-span-2 col-span-0 " : ""}`}>
           <Carousel draggable={false} opts={{}}>
             <CarouselContent draggable={false}>
-              {videoPresent && (
+              {/* {videoPresent && (
                 <CarouselItem>
                   <CardSlider
                     url={videoUrl as string}
@@ -119,9 +128,9 @@ function CardProduct({
                     videoPresent={videoPresent}
                   />
                 </CarouselItem>
-              )}
+              )} */}
 
-              {photos.map((url: string, index: number) => (
+              {/* {photos?.length > 0 && photos.map((url: string, index: number) => (
                 <CarouselItem key={index}>
                   <CardSlider
                     url={url}
@@ -130,6 +139,23 @@ function CardProduct({
                     // cartImage={cartImage}
                     numPhotos={numPhotos}
                     type={type}
+                    videoPresent={videoPresent}
+                    // size={size}
+                    // items={items}
+                    // currentSlide={currentSlide}
+                    // itemIndex={index}
+                  />
+                </CarouselItem>
+              ))} */}
+              {images?.length > 0 && images.map((url: string, index: number) => (
+                <CarouselItem key={index}>
+                  <CardSlider
+                    url={url}
+                    // isVideo={false}
+                    size={size}
+                    // cartImage={cartImage}
+                    numPhotos={images?.length}
+                    type={status}
                     videoPresent={videoPresent}
                     // size={size}
                     // items={items}
@@ -151,25 +177,25 @@ function CardProduct({
                 bgClassName === "bg-white" ? "text-black" : "dark:text-white"
               }`}
             >
-              {title}
+              {name}
             </p>
             <div className="flex gap-6 items-center">
-              <p
+              {/* <p
                 className={` ${
                   size == "lg" ? "md:text-[32px] md:my-0 my-4 text-[18px] " : "text-[18px] "
                 }  font-medium text-[#daad54] blur-sm dark:text-white`}
               >
-                &euro;{price}
-              </p>
+                &euro;{amount}
+              </p> */}
               <div className="flex flex-col  text-[14px]">
                 <button
                   className="flex -ml-4 text-primary items-center "
-                  onClick={() => router.push("/")}
+                  // onClick={() => router.push("/")}
                 >
-                  <MdChevronRight className="text-[18px]" />
-                  Registrati
+                  &nbsp;&nbsp;&nbsp;&nbsp;<MdLocationPin className="text-[18px]" />
+                  {address}
                 </button>
-                <label className="text-[#C4C4C4]">per vedere il prezzo</label>
+                {/* <label className="text-[#C4C4C4]">per vedere il prezzo</label> */}
               </div>
             </div>
 
@@ -178,7 +204,7 @@ function CardProduct({
                 bgClassName === "bg-white" ? "text-[#666666]" : "dark:text-white"
               } `}
             >
-              {description}
+              {type}
             </p>
             <div className="flex py-2 ">
               <div className="flex items-start gap-4">
@@ -194,7 +220,7 @@ function CardProduct({
                       bgClassName === "bg-white" ? "text-black" : "dark:text-white"
                     }`}
                   >
-                    {room_num}{" "}
+                    {bedrooms}{" "}
                   </p>
                 </div>
 
@@ -211,7 +237,7 @@ function CardProduct({
                     } `}
                   >
                     {" "}
-                    {bathrooms}{" "}
+                    {washrooms}{" "}
                   </p>
                 </div>
 
@@ -234,17 +260,17 @@ function CardProduct({
                         }`}
                       >
                         {" "}
-                        {sqmCommercial} m&sup2;
+                        {area} sq.ft
                       </p>
-                      <p
+                      {/* <p
                         className={`text-[9px] font-medium m-0 p-0 text-black  ${
                           bgClassName === "bg-white" ? "text-black" : "dark:text-white"
                         }`}
                       >
                         commerciali
-                      </p>
+                      </p> */}
                     </div>{" "}
-                    <div className="text-center">
+                    {/* <div className="text-center">
                       <p
                         className={`text-[14px] font-medium m-0 p-0 text-black ${
                           bgClassName === "bg-white" ? "text-black" : "dark:text-white"
@@ -260,7 +286,7 @@ function CardProduct({
                       >
                         terreno
                       </p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -271,28 +297,28 @@ function CardProduct({
             className={`border-t border-primary ${bgClassName}  px-4 py-4 flex justify-between items-center`}
           >
             <div className="flex gap-4 items-center  ">
-              <Image
+              {/* <Image
                 src={agency?.logo}
                 objectFit="contain"
                 alt="card-product"
                 width={40}
                 height={40}
-              />
+              /> */}
               <p
                 className={`text-[16px] font-bold text-[#212121] ${
                   bgClassName === "bg-white" ? "text-black" : "dark:text-white"
                 }   `}
               >
-                {agency?.name}
+                AED {amount}
               </p>
             </div>
             <div>
               {" "}
-              <FiShare2
+              {/* <FiShare2
                 className={`text-[18px] text-black ${
                   bgClassName === "bg-white" ? "text-black" : "dark:text-white"
                 } `}
-              />{" "}
+              />{" "} */}
             </div>
           </div>
         </div>
